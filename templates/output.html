@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insight Cards</title>
+  <style>
+    body { font-family: Arial; padding: 40px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 20px 0; }
+    .theme { font-weight: bold; font-size: 20px; }
+    .sentiment { color: gray; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>📊 Insight Cards</h1>
+  {% for card in insights %}
+    <div class="card">
+      <div class="theme">{{ card.theme }}</div>
+      <ul>
+        {% for quote in card.quotes %}
+          <li>"{{ quote }}"</li>
+        {% endfor %}
+      </ul>
+      <div class="sentiment">Sentiment: {{ card.sentiment }}</div>
+    </div>
+  {% endfor %}
+  <a href="/">← Back to Input</a>
+</body>
+</html>
